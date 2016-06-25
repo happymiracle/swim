@@ -2,14 +2,19 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "24.0.0"
 
     defaultConfig {
         applicationId "swim.miracle.com.swim"
         minSdkVersion 14
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "1.0.0"
+
+        jackOptions {
+            enabled true
+        }
+
     }
     buildTypes {
         release {
@@ -17,6 +22,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        incremental true
+        preDexLibraries true
+        javaMaxHeapSize "5g"
+        maxProcessCount 6
+        threadCount 6
+    }
+
 }
 
 dependencies {
@@ -27,4 +46,7 @@ dependencies {
     compile 'com.android.support:support-annotations:24.0.0'
     compile 'com.facebook.fresco:fresco:0.11.0'
     compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
 }

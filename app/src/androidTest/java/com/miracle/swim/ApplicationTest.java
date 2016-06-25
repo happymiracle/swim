@@ -1,4 +1,4 @@
-package swim.miracle.com.swim;
+package com.miracle.swim;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
