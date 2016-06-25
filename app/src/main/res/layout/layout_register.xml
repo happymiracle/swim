@@ -30,7 +30,7 @@
             android:layout_centerInParent="true"
             android:text="title"
             android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <EditText
@@ -42,12 +42,12 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/shape_et_login"
         android:gravity="center_vertical|start"
-        android:hint="@string/login_username_hint"
+        android:hint="@string/register_username_hint"
         android:inputType="text"
         android:paddingLeft="15dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/et_password"
@@ -65,19 +65,43 @@
         android:textColor="@color/white"
         android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/shapr_bg_login"
-        android:gravity="center"
-        android:text="登录"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
 
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_weight="5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shape_et_login"
+            android:gravity="center_vertical|start"
+            android:hint="验证码"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/btn_send"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_et_login"
+            android:gravity="center"
+            android:text="发送验证码(58)"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/btn_register"
@@ -90,6 +114,6 @@
         android:gravity="center"
         android:text="注册"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
 </LinearLayout>
