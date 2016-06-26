@@ -22,8 +22,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void afterOnCreate(Bundle savedInstanceState) {
-        super.afterOnCreate(savedInstanceState);
-
         mEtUserName = (EditText) findViewById(R.id.et_username);
         mEtPassword = (EditText) findViewById(R.id.et_password);
         mEtCode = (EditText) findViewById(R.id.et_code);

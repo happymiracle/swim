@@ -27,8 +27,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void afterOnCreate(Bundle savedInstanceState) {
-        super.afterOnCreate(savedInstanceState);
-
         mEtUserName = (EditText) findViewById(R.id.et_username);
         mEtPassword = (EditText) findViewById(R.id.et_password);
         mBtnLogin = (TextView) findViewById(R.id.btn_login);

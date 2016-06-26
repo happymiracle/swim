@@ -34,9 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract  @LayoutRes int getLayoutId();
 
-    public void afterOnCreate(Bundle savedInstanceState) {
-
-    }
+    public abstract void afterOnCreate(Bundle savedInstanceState);
 
     public boolean isShowTitle() {
         return true;
