@@ -9,17 +9,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.miracle.swim.R;
+import com.miracle.swim.databinding.LayoutLoginBinding;
 import com.miracle.swim.utils.ToastUtils;
 
 /**
  * Created by Administrator on 2016/6/25 0025.
  */
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
-    private EditText mEtUserName;
-    private EditText mEtPassword;
-    private TextView mBtnLogin;
-    private TextView mBtnRegister;
-
     @Override
     public @LayoutRes int getLayoutId() {
         return R.layout.layout_login;
@@ -27,12 +23,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void afterOnCreate(Bundle savedInstanceState) {
-        mEtUserName = (EditText) findViewById(R.id.et_username);
-        mEtPassword = (EditText) findViewById(R.id.et_password);
-        mBtnLogin = (TextView) findViewById(R.id.btn_login);
-        mBtnRegister = (TextView) findViewById(R.id.btn_register);
-        mBtnLogin.setOnClickListener(this);
-        mBtnRegister.setOnClickListener(this);
+        ((LayoutLoginBinding)mRootBinding).btnLogin.setOnClickListener(this);
+        ((LayoutLoginBinding)mRootBinding).btnRegister.setOnClickListener(this);
     }
 
     @Override
@@ -50,18 +42,19 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case R.id.btn_register:
                 startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
-                finish();
                 break;
         }
     }
 
     private boolean checkInputValid() {
         boolean result = true;
-        if(TextUtils.isEmpty(mEtUserName.getText().toString())) {
+        String strUserName = ((LayoutLoginBinding)mRootBinding).etUsername.getText().toString();
+        if(TextUtils.isEmpty(strUserName)) {
             ToastUtils.showToast("用户名不能为空");
             return false;
         }
-        if(TextUtils.isEmpty(mEtPassword.getText().toString())) {
+        String strPassword = ((LayoutLoginBinding)mRootBinding).etPassword.getText().toString();
+        if(TextUtils.isEmpty(strPassword)) {
             ToastUtils.showToast("密码不能为空");
             return false;
         }

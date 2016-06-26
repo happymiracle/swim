@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.miracle.swim.R;
+import com.miracle.swim.databinding.LayoutRegisterBinding;
 
 import org.w3c.dom.Text;
 
@@ -14,22 +15,11 @@ import org.w3c.dom.Text;
  */
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
-    private EditText mEtUserName;
-    private EditText mEtPassword;
-    private EditText mEtCode;
-    private TextView mBtnSend;
-    private TextView mBtnRegister;
-
     @Override
     public void afterOnCreate(Bundle savedInstanceState) {
-        mEtUserName = (EditText) findViewById(R.id.et_username);
-        mEtPassword = (EditText) findViewById(R.id.et_password);
-        mEtCode = (EditText) findViewById(R.id.et_code);
-        mBtnSend = (TextView) findViewById(R.id.btn_send);
-        mBtnRegister = (TextView) findViewById(R.id.btn_register);
-
-        mBtnSend.setOnClickListener(this);
-        mBtnRegister.setOnClickListener(this);
+        ((LayoutRegisterBinding)mRootBinding).btnSend.setOnClickListener(this);
+        ((LayoutRegisterBinding)mRootBinding).btnRegister.setOnClickListener(this);
+        ((LayoutRegisterBinding)mRootBinding).topTitle.ivBack.setOnClickListener(this);
     }
 
     @Override
@@ -51,6 +41,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             case R.id.btn_register:
                 //TODO:
                 break;
+            case R.id.iv_back:
+                finish();
         }
     }
 }

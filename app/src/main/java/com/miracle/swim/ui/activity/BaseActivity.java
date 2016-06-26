@@ -1,5 +1,7 @@
 package com.miracle.swim.ui.activity;
 
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
@@ -16,14 +18,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     private TextView mTvTitle;
     private ImageView mIvBack;
 
+    protected ViewDataBinding mRootBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(getLayoutId());
+        mRootBinding = DataBindingUtil.setContentView(this,getLayoutId());
         if(isShowTitle()) {
-            mTvTitle = (TextView) findViewById(R.id.tv_title);
-            mIvBack = (ImageView) findViewById(R.id.iv_back);
+            mTvTitle = (TextView) mRootBinding.getRoot().findViewById(R.id.tv_title);
+            mIvBack = (ImageView) mRootBinding.getRoot().findViewById(R.id.iv_back);
             if(!TextUtils.isEmpty(getTitleText())) {
                 mTvTitle.setText(getTitleText());
             }
