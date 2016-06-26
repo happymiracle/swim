@@ -8,4 +8,9 @@ import com.miracle.swim.model.bean.UserLoginBean;
 
 public class UserRegisterResponse extends BaseResponse {
     public UserLoginBean record;
+
+    @Override
+    public String toString() {
+        return record.toString();
+    }
 }

@@ -6,7 +6,7 @@ package com.miracle.swim.utils;
 public class Constants {
     public interface UrlInfo {
         String BASE_PIC_URL = "http://swim-images.oss-cn-beijing.aliyuncs.com/";
-        String BASE_URL = "api.swim.pics/";
+        String BASE_URL = "http://api.swim.pics/";
 
         String URL_USER_LOGIN = "v1/user/login";
         String URL_USER_REGISTER = "v1/user/register";

@@ -10,4 +10,6 @@ public class BaseResponse implements Serializable {
     public int code;
     public String message;
     public String lastTime;
+
+
 }

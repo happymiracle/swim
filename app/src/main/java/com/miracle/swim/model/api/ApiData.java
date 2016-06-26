@@ -8,7 +8,11 @@ import com.miracle.swim.utils.Constants;
 
 import java.util.Map;
 
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -26,9 +30,11 @@ public interface ApiData {
     @GET(Constants.UrlInfo.URL_LIST_NEAR)
     Observable<VenueNearResponse>  getVenueNearData(@QueryMap Map<String,String> params);
 
+    @FormUrlEncoded
     @POST(Constants.UrlInfo.URL_USER_LOGIN)
     Observable<UserLoginResponse> getUserLoginData(@FieldMap Map<String,String> params);
 
+    @FormUrlEncoded
     @POST(Constants.UrlInfo.URL_USER_REGISTER)
     Observable<UserRegisterResponse> getUserRegisterData(@FieldMap Map<String,String> params);
 

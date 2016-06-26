@@ -4,4 +4,5 @@
     <string name="register_username_hint">输入你喜欢的用户名</string>
     <string name="login_username_hint">用户名/手机号码</string>
     <string name="login_password_hint">密码</string>
+    <string name="login_mobile_hint">手机号</string>
 </resources>

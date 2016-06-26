@@ -48,12 +48,12 @@ public class TestRetrofitActivity extends BaseActivity {
                 .subscribe(new Subscriber<GetIpInfoResponse>() {
                     @Override
                     public void onCompleted() {
-                        Log.i("vincent","onCompleted");
+                        Log.i("miracle","onCompleted");
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.i("vincent","onError " + e.getMessage().toString());
+                        Log.i("miracle","onError " + e.getMessage().toString());
                     }
 
                     @Override

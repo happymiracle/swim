@@ -121,4 +121,20 @@ public class UserLoginBean implements Serializable {
     public void setSchool(String school) {
         this.school = school;
     }
+
+    @Override
+    public String toString() {
+        return
+        " userId; = " + userId + "\n" +
+                "gender; = " + gender + "\n" +
+                "nickName; = " + nickName + "\n" +
+                "mobile; = " + mobile + "\n" +
+                "createtime; = " + createtime + "\n" +
+                "birthday; = " + birthday + "\n" +
+                "lovestatus; = " + lovestatus + "\n" +
+                "lovestatus; = " + lovestatus + "\n" +
+                "address; = " + address + "\n" +
+                "job; = " + job + "\n" +
+                "school; = " + school + "\n";
+    }
 }

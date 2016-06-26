@@ -1,7 +1,5 @@
 package com.miracle.swim.model.params;
 
-import com.miracle.swim.model.params.BaseParams;
-
 /**
  * Created by Administrator on 2016/6/26 0026.
  */
